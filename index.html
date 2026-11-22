@@ -1,0 +1,92 @@
+​<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Checker</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f2f5;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+.container {
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+text-align: center;
+width: 90%;
+max-width: 400px;
+}
+input[type="text"] {
+width: 80%;
+padding: 10px;
+margin: 15px 0;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+button {
+padding: 10px 20px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+button:hover {
+background-color: #0056b3;
+}
+#result {
+margin-top: 20px;
+font-size: 1.2em;
+color: #333;
+}
+.social-links {
+margin-top: 25px;
+padding-top: 15px;
+border-top: 1px solid #eee;
+}
+.social-btn {
+display: inline-block;
+margin: 5px;
+padding: 8px 15px;
+background-color: #333;
+color: white;
+text-decoration: none;
+border-radius: 5px;
+font-size: 0.9em;
+}
+.social-btn.insta { background-color: #E1306C; }
+.social-btn.youtube { background-color: #FF0000; }
+</style>
+</head>
+<body>
+​<div class="container">
+<h1>Vibe Checker</h1>
+<input type="text" id="nameInput" placeholder="अपना नाम लिखें...">
+<button onclick="checkVibe()">चेक करें</button>
+<div id="result"></div>
+​<div class="social-links">
+<p>मुझसे जुड़े रहें:</p>
+<a href="[https://instagram.com](https://instagram.com)" class="social-btn insta" target="https://www.instagram.com/dev.deka_?fqnt=MWs2eGZpcnB0NWxhaQ==">Instagram</a>
+</div>
+</div>
+​<script>
+function checkVibe() {
+const names = ["रॉकस्टार", "मस्तीखोर", "शांत दिमाग", "ओवरथिंकर"];
+const randomVibe = names[Math.floor(Math.random() * names.length)];
+const name = document.getElementById("nameInput").value;
+if (name.trim() !== "") {
+document.getElementById("result").innerHTML = '<h3>' + name + ', आपका वाइब है: ' + randomVibe + '</h3>';
+} else {
+document.getElementById("result").innerHTML = '<h3>कृपया अपना नाम लिखें!</h3>';
+}
+}
+</script>
+​</body>
+</html>
